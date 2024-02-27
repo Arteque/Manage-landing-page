@@ -1,0 +1,72 @@
+$clrs:(
+    prm:(
+        red:(
+            100:hsl(12, 88%, 59%)
+        ),
+        blue:(
+            100: hsl(228, 39%, 23%)
+        )
+    ),
+    ntr:(
+        blue:(
+            100:hsl(227, 12%, 61%),
+            200: hsl(233, 12%, 13%)
+        ),
+        red:(
+            100: hsl(13, 100%, 96%)
+        ),
+        gray:(
+            100: hsl(0, 0%, 98%)
+        )
+    )
+);
+$fonts:(
+    sans:(
+        regular:400,
+        medium:500,
+        bold:700
+    )
+);
+
+@mixin tablet{
+    @media screen and (min-width:700px){@content;}
+}
+@mixin desktop{
+    @media screen and (min-width:980px){@content;}
+}
+
+
+*,*::after, *::before{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+:root{
+    --sans: "Be Vietnam Pro", sans-serif;
+    @each $prnt, $prnvl in $clrs{
+        @each $subclr, $subclrvl in $prnvl{
+           @each $clr, $vl in $subclrvl{
+            --clr-#{$prnt}-#{$subclr}-#{$clr}:#{$vl};
+           }
+        }
+    }
+}
+@each $font, $vls in $fonts{
+    @each $size, $vl in $vls{
+        .txt-#{$font}-#{$size}{
+            font-weight: #{$vl};
+        }
+    }
+}
+@each $prnt, $prnvl in $clrs{
+    @each $subclr, $subclrvl in $prnvl{
+       @each $clr, $vl in $subclrvl{
+        .txt-#{$prnt}-#{$subclr}-#{$clr}{
+            color: var(--clr-#{$prnt}-#{$subclr}-#{$clr})
+        }
+        .bg-#{$prnt}-#{$subclr}-#{$clr}{
+            background-color: var(--clr-#{$prnt}-#{$subclr}-#{$clr})
+        }
+       }
+    }
+}

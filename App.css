@@ -1,0 +1,69 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --sans: "Be Vietnam Pro", sans-serif;
+  --clr-prm-red-100:hsl(12, 88%, 59%);
+  --clr-prm-blue-100:hsl(228, 39%, 23%);
+  --clr-ntr-blue-100:hsl(227, 12%, 61%);
+  --clr-ntr-blue-200:hsl(233, 12%, 13%);
+  --clr-ntr-red-100:hsl(13, 100%, 96%);
+  --clr-ntr-gray-100:hsl(0, 0%, 98%);
+}
+
+.txt-prm-red-100 {
+  color: var(--clr-prm-red-100);
+}
+
+.bg-prm-red-100 {
+  background-color: var(--clr-prm-red-100);
+}
+
+.txt-prm-blue-100 {
+  color: var(--clr-prm-blue-100);
+}
+
+.bg-prm-blue-100 {
+  background-color: var(--clr-prm-blue-100);
+}
+
+.txt-ntr-blue-100 {
+  color: var(--clr-ntr-blue-100);
+}
+
+.bg-ntr-blue-100 {
+  background-color: var(--clr-ntr-blue-100);
+}
+
+.txt-ntr-blue-200 {
+  color: var(--clr-ntr-blue-200);
+}
+
+.bg-ntr-blue-200 {
+  background-color: var(--clr-ntr-blue-200);
+}
+
+.txt-ntr-red-100 {
+  color: var(--clr-ntr-red-100);
+}
+
+.bg-ntr-red-100 {
+  background-color: var(--clr-ntr-red-100);
+}
+
+.txt-ntr-gray-100 {
+  color: var(--clr-ntr-gray-100);
+}
+
+.bg-ntr-gray-100 {
+  background-color: var(--clr-ntr-gray-100);
+}
+
+html, body {
+  font-family: var(--sans);
+  font-size: 1rem;
+}/*# sourceMappingURL=App.css.map */
