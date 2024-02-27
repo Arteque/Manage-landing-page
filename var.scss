@@ -35,12 +35,6 @@ $fonts:(
     @media screen and (min-width:980px){@content;}
 }
 
-
-*,*::after, *::before{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
 :root{
     --sans: "Be Vietnam Pro", sans-serif;
     @each $prnt, $prnvl in $clrs{

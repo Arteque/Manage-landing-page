@@ -10,19 +10,21 @@
     <link rel="stylesheet" href="./App.css">
     <title>Frontend Mentor | Manage landing page</title>
 </head>
-<body class="bg-ntr-gray-100">
+<body>
     <h1 class="hide-it">Frontend Mentor | Manage landing page</h1>
-    <header>
+    <header id="main-header">
         <div class="wrapper">
             <!--Logo-->
             <div class="logo-container">
                 <img src="./images/logo.svg" alt="Manage Logo">
             </div>
+            <!--Burger Menu-->
+            <div class="burger">
+                <img class="open" src="./images/icon-hamburger.svg" alt="Nav Menu Hamburger Open Icon">
+                <img class="close" src="./images/icon-close.svg" alt="Nav Menu Hamburger Close Icon">
+            </div>
             <!--Main Navigation-->
             <nav>
-                <div class="burger">
-                    <img src="./images/icon-hamburger.svg" alt="Nav Menu Hamburger Icon">
-                </div>
                 <ul class="header-main-nav-containter">
                     <li>
                         <a href="">
@@ -63,7 +65,7 @@
             </nav>
 
             <!--Call to action Container-->
-            <div class="call-to-action">
+            <div class="call-to-action has-reflection">
                 <a href="#">
                     <div class="text">
                         Get Started
@@ -77,7 +79,122 @@
     <!--Main Content-->
     <main>
         <article>
+            <!-- HeroSection -->
+            <section id="hero-section">
+                <div class="wrapper">
+                    <div class="media-container">
+                        <img src="./images/illustration-intro.svg" alt="Intro Illustration">
+                    </div>
+                    <div class="text-content">
+                        <h2 class="txt-sans-700 txt-prm-blue-100">Bring everyone together to build better products.</h2>
+                        <p>Manage makes it simple for software teams to plan day-to-day 
+                            tasks while keeping the larger team goals in view.</p>
+                    </div>
+                    <div class="call-to-action has-reflection">
+                        <a href="#">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+            </section>
 
+            <!--About-->
+            <section id="about-section">
+                <div class="wrapper">
+                    <header>
+                        <h2>
+                            What's different about Manage?
+                        </h2>
+                        <p>
+                            Manage provides all the functionality your team needs, without 
+                            the complexity. Our software is tailor-made for modern digital 
+                            product teams.
+                        </p>
+                    </header>
+                </div>
+                <div class="larger-wrapper">
+                    <!--List Items-->
+                    <div class="about-item">
+                        <div class="call-to-action listing">
+                            <span>01</span>
+                            <span>Track company-wide progress</span>
+                        </div>
+                        <p>
+                            See how your day-to-day tasks fit into the wider vision. Go from 
+                            tracking progress at the milestone level all the way done to the 
+                            smallest of details. Never lose sight of the bigger picture again.
+                        </p>
+                    </div>  
+                    
+                    <!--List Items-->
+                    <div class="about-item">
+                        <div class="call-to-action listing">
+                            <span>02</span>
+                            <span>Advanced built-in reports</span>
+                        </div>
+                        <p>
+                            Set internal delivery estimates and track progress toward company 
+                            goals. Our customisable dashboard helps you build out the reports 
+                            you need to keep key stakeholders informed.mallest of details. Never lose sight of the bigger picture again.
+                        </p>
+                    </div>  
+                    
+                    <!--List Items-->
+                    <div class="about-item">
+                        <div class="call-to-action listing">
+                            <span>03</span>
+                            <span>Advanced built-in reports</span>
+                        </div>
+                        <p>
+                            Everything you need in one place
+                            Stop jumping from one service to another to communicate, store files, 
+                            track tasks and share documents. Manage offers an all-in-one team 
+                            productivity solution.
+                        </p>
+                    </div>  
+                </div>    
+            </section>
+
+            <!--Testimonials-->
+            <section id="testimonials-section">
+                <div class="wrapper">
+                    <!--Header-->
+                    <header>
+                        <h2>
+                            What they’ve said
+                        </h2>
+                    </header>
+                </div>
+
+                <!--Slider Container-->
+                <div class="larger-wrapper">
+                    <div class="sliders-container">
+                        <div class="sliders">
+                            <!--JSON DATA-->
+                        </div>
+                        <div class="ctrls-container">
+                            <ul class="dots-container">
+                                <!-- JSON DATA -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+
+            <!--Call to action-->
+            <section id="call-section" class="bg-prm-red-100">
+                <div class="larger-wrapper">
+                    <header>
+                        <h2 class="txt-ntr-gray-100">Simplify how your team works today.</h2>
+                    </header>
+                    <div class="call-to-action reverse">
+                        <a href="#">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+            </section>
         </article>
     </main>
     <footer class="bg-ntr-blue-200">
@@ -236,5 +353,20 @@
         </div>
     </footer>
     <script src="./App.js"></script>
+
+
+    <script>
+        //Mobile view Open and close nav
+
+        const burger = document.querySelector(".burger")
+        const nav = document.querySelector("nav")
+
+        burger.addEventListener("click", (e) => {
+            e.preventDefault()
+
+            burger.classList.toggle("open")
+            nav.classList.toggle("open")
+        })
+    </script>
 </body>
 </html>

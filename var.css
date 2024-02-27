@@ -1,10 +1,3 @@
-*, *::after, *::before {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
 :root {
   --sans: "Be Vietnam Pro", sans-serif;
   --clr-prm-red-100:hsl(12, 88%, 59%);
