@@ -32,7 +32,7 @@ a{
 ul[class]{
     list-style:none;
 }
-p{
+p, input{
     color: var(--clr-ntr-blue-100);
     font-size: 1rem;
     text-align:center;
@@ -46,7 +46,7 @@ p{
         color: var(--clr-ntr-gray-100);
         width: fit-content;
         background-color: var(--clr-prm-red-100);
-        border-radius: 40px;
+        border-radius: var(--raduis);
         font-weight: 700;
     }
     &.reverse{
@@ -163,7 +163,7 @@ p{
     }
 }
 section{
-    padding-block-end: 6rem;
+    padding-block-end: 4rem;
     img{
         display:block;
         width: 100%;
@@ -182,14 +182,21 @@ section{
     &::before, &::after{
         content:"";
         position:absolute;
-        inset: 0;
         background-image:url(./images/bg-tablet-pattern.svg);
         background-repeat: no-repeat;
         z-index: -1;
     }
     &::before{
-        background-size: 130%;
-        background-position: 45px -160px;
+        height: 100%;
+        width: 100%;
+        border: 1px solid red;
+        right: 0;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: 100px -20px;
+       @include tablet{
+        background-position: top right;
+       }
     }
     &::after{
         background-size: 70%;
@@ -261,11 +268,16 @@ section{
             }
         }
     }
+    .call-to-action{
+        width: fit-content;
+        margin:3rem auto 0 auto;
+    }
 }
 #call-section{
     text-align: center;
     header{
-        padding-block: 3rem 0rem;
+        padding-block-start: 4rem;
+        margin-block-end: 2rem;
     }
     h2{
         font-size: 2.5rem;
@@ -275,4 +287,113 @@ section{
         margin-inline:auto;
         width: fit-content;
     }
+}
+
+#main-footer{
+    .footer-top{
+        .wrapper{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 0.1fr;
+            grid-template-areas: 
+                                "col1 col1"
+                                "col2 col3"
+                                "col4 col4"
+                                "col5 col5";
+            gap: 2rem;
+            align-items: center;
+            
+            .footer-logo-container{
+                grid-area: col4;
+                display:flex;
+                flex-direction: column-reverse;
+                .logo-container{
+                    margin-inline:auto;
+                }
+                .social-icons{
+                    display:flex;
+                    justify-content: space-between;
+                    margin-block-end: 2rem;
+                    img{
+                        width: 2rem;;
+                    }
+                }
+            }
+            .form-container{
+                grid-area: col1;
+                form{
+                    display: flex;
+                    align-items: center;
+                    margin-inline:auto;
+                    width: 100%;
+                    gap: 0.5rem;
+                    input{
+                        border-radius: var(--raduis);
+                        display: block;
+                        width: 100%;
+                        padding-block:0.5rem;
+                        margin-block: 0;
+                        height: 3rem;
+                    }
+                }
+                button{
+                    border: none;
+                    cursor: pointer;
+                }
+            }
+            a{
+                display:block;
+                color:var(--clr-ntr-gray-100);
+                padding: .5rem 0 0 1rem;
+                margin-block-end: 1rem;
+                font-weight: 300;
+            }
+            .footer-nav-container{
+                grid-area:col2;
+            }
+            .footer-extra-nav-container{
+                grid-area: col3;
+                align-self: baseline;
+            }
+            .copyright-container{
+                grid-area:col5;
+                align-self: baseline;
+                p{
+                    margin-block: 0 2rem;
+                    font-size: smaller;
+                }
+            }
+        }
+    }
+    .footer-bottom{
+        background-color: var(--clr-ntr-blue-100);
+        padding: 1rem 0;
+        .attribution{
+            .main{
+                font-size: smaller;
+                text-align: center;
+                color: var(--clr-ntr-blue-200);
+                a{
+                    color: var(--clr-ntr-blue-200);
+                    text-decoration:underline;
+                    margin-block-end: 1rem;
+                    display:block;
+                }
+            }
+            ul{
+                list-style:none;
+                display:flex;
+                justify-content: space-between;
+                gap: 1rem;
+                padding-block: 2rem 1rem;
+                li{
+                    i{
+                        color: var(--clr-ntr-blue-200);
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+
 }

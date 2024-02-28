@@ -29,7 +29,7 @@ $fonts:(
 );
 
 @mixin tablet{
-    @media screen and (min-width:700px){@content;}
+    @media screen and (min-width:600px){@content;}
 }
 @mixin desktop{
     @media screen and (min-width:980px){@content;}
@@ -44,6 +44,7 @@ $fonts:(
            }
         }
     }
+    --raduis: 40px;
 }
 @each $font, $vls in $fonts{
     @each $size, $vl in $vls{
