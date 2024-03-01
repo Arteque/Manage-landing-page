@@ -64,27 +64,62 @@ fetchData()
 .then(() => {
 
 
+    const sliderParent = document.querySelector(".sliders")
     const sliders = [...document.querySelectorAll(".sliders .slider")]
     const ctrls = document.querySelectorAll(".dots-container li")
-    
+    let mouseStatus = false
+    let startX, scrollLeft
 
     
 
-    ctrls.forEach((ctrl, index) => {
-        ctrl.addEventListener("click", (e) => {
-            const currentSlider = document.querySelector(".sliders .slider.current")
-            const i = sliders.indexOf(currentSlider)
-
-            currentSlider.classList.remove("current")
-            ctrls[i].classList.remove("current")
-
-            sliders[index].classList.add("current")
-            ctrl.classList.add("current")
-
-            //resize the box
-            const box = sliders[index].getBoundingClientRect()
-            const boxHeight = box.height
-            sliders[index].parentElement.style.cssText = "height:"+boxHeight+"px"
+   
+        ctrls.forEach((ctrl, index) => {
+            ctrl.addEventListener("click", (e) => {
+                const currentSlider = document.querySelector(".sliders .slider.current")
+                const i = sliders.indexOf(currentSlider)
+    
+                currentSlider.classList.remove("current")
+                ctrls[i].classList.remove("current")
+    
+                sliders[index].classList.add("current")
+                ctrl.classList.add("current")
+    
+                //resize the box
+                const box = sliders[index].getBoundingClientRect()
+                const boxHeight = box.height
+                sliders[index].parentElement.style.cssText = "height:"+boxHeight+"px"
+            })
         })
+
+        const dragStart = (e) => {
+            mouseStatus = true
+           
+            startX = e.pageX - sliderParent.offsetLeft
+            scrollLeft = sliderParent.scrollLeft
+    }
+    const dragStop = (e) => {
+        mouseStatus = false
+    }
+
+    const move = (e) => {
+        e.preventDefault()
+        if(!mouseStatus) return
+        const x = e.pageX - sliderParent.offsetLeft
+        const scroll = x  - startX
+        sliderParent.scrollLeft = scrollLeft - scroll
+    }
+
+    sliderParent.addEventListener("mousemove", move, false)
+    sliderParent.addEventListener("mousedown", dragStart, false)
+    sliderParent.addEventListener("mouseup", dragStop, false)
+    sliderParent.addEventListener("mouseleave", dragStop, false)
+    window.addEventListener("resize", () => {
+        sliderParent.addEventListener("mousemove", move, false)
+        sliderParent.addEventListener("mousedown", dragStart, false)
+        sliderParent.addEventListener("mouseup", dragStop, false)
+        sliderParent.addEventListener("mouseleave", dragStop, false)
     })
+
+
+    
 })

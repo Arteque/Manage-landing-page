@@ -1,6 +1,7 @@
 :root {
   --sans: "Be Vietnam Pro", sans-serif;
   --clr-prm-red-100:hsl(12, 88%, 59%);
+  --clr-prm-red-200:hsl(12, 88%, 70%);
   --clr-prm-blue-100:hsl(228, 39%, 23%);
   --clr-ntr-blue-100:hsl(227, 12%, 61%);
   --clr-ntr-blue-200:hsl(233, 12%, 13%);
@@ -28,6 +29,14 @@
 
 .bg-prm-red-100 {
   background-color: var(--clr-prm-red-100);
+}
+
+.txt-prm-red-200 {
+  color: var(--clr-prm-red-200);
+}
+
+.bg-prm-red-200 {
+  background-color: var(--clr-prm-red-200);
 }
 
 .txt-prm-blue-100 {
