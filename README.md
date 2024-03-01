@@ -36,19 +36,18 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
-
-## My process
+- Solution Code: [Repo](https://github.com/Arteque/Manage-landing-page)
+- Live Site URL: [Live page](https://arteque.github.io/Manage-landing-page/)
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
+- HTML5
+- CSS/Scss
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- 
+- Javascript
+- JSON
 
 
 ## Author
