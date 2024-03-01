@@ -7,6 +7,7 @@
   --clr-ntr-red-100:hsl(13, 100%, 96%);
   --clr-ntr-gray-100:hsl(0, 0%, 98%);
   --raduis: 40px;
+  --max-width:1440px;
 }
 
 .txt-sans-regular {

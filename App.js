@@ -1,6 +1,6 @@
 // Show backgroundcolor 
 const sections = document.querySelectorAll("section")
-const mainHeader = document.querySelector("header#main-header .wrapper")
+const mainHeader = document.querySelector("header#main-header")
 document.addEventListener("scroll", (e) => {
     let scrollPos = window.scrollY
     if(scrollPos >= 500){
